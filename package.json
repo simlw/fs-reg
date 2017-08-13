@@ -1,7 +1,7 @@
 {
   "name": "fs-reg",
   "version": "1.0.0",
-  "description": "",
+  "description": "Find files or directories based on file names or regular expressions.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,10 +15,17 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/simlw/fs-reg"
+  },
   "keywords": [
     "fs",
     "RegExp"
   ],
-  "author": "Levi Liu",
+  "author": {
+    "name": "Levi Liu",
+    "email": "liuw809@163.com"
+  },
   "license": "ISC"
 }

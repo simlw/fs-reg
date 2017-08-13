@@ -1,4 +1,4 @@
-const fsReg = require('./../index');
+const fsReg = require('./../lib');
 const assert = require('assert');
 
 describe('FsReg', function() {

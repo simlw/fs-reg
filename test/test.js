@@ -6,21 +6,22 @@ describe('FsReg', function() {
         it('it should return file name when the file exists', function() {
             return fsReg.find('index.js')
                 .then(function(file) {
-                    assert.equal(file, 'index.js');
+                    assert.deepEqual(file[0], 'index.js');
                 })
         });
 
         it('it should return file name when the file exists', function() {
             return fsReg.find(/inde/)
                 .then(function(file) {
-                    assert.equal(file, 'index.js');
+                    assert.deepEqual(Array.isArray(file), true);
+                    assert.deepEqual(file, ['index.js']);
                 })
         });
 
         it('it should return undefined when the file does not exists', function() {
             return fsReg.find('i')
                 .then(function(file) {
-                    assert.equal(file, undefined);
+                    assert.deepEqual(file, []);
                 })
         });
 
@@ -55,14 +56,14 @@ describe('FsReg', function() {
         it('it should return promise with the value of file name when the target file exists', function() {
             return fsReg.find(/t2/, 'test', 'file')
                 .then(function(file) {
-                    assert.equal('t2.js', file);
+                    assert.deepEqual(['t2.js'], file);
                 })
         });
 
         it('it should return Promise with the value of directory name when the target directory exists', function() {
             return fsReg.find(/t2/, 'test', 'directory')
                 .then(function(file) {
-                    assert.equal('t2', file);
+                    assert.equal('t2', file[0]);
                 })
         });
 
